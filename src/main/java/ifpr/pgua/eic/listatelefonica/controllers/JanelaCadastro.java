@@ -18,7 +18,14 @@ public class JanelaCadastro {
     
     private VBox root;
     
+    /*Componente para mostrar um rótulo na tela. Geralmente
+     * é utilizado para identificar outro componente.
+     */
     private Label lbNome;
+
+    /*Componente para mostrar um campo de texto na tela. Permite
+     * ao usuário digitar dados no teclado.
+     */
     private TextField tfNome;
 
     private Label lbTelefone;
@@ -74,7 +81,10 @@ public class JanelaCadastro {
     }
 
 
+    /*Método que será executado quando clicar no botão de cadastrar. */
     private void cadastrar(ActionEvent evento){
+
+        /*Pega o texto digitado pelo usuário e armazena em uma variável. */
         String nome = tfNome.getText();
         String telefone = tfTelefone.getText();
         String email  = tfEmail.getText();
