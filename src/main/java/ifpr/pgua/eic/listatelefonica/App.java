@@ -29,7 +29,7 @@ public class App extends BaseAppNavigator {
 
     @Override
     public String getAppTitle() {
-        return "Lista Telefônica";
+        return "Lista Telefônica Teste";
     }
 
     @Override

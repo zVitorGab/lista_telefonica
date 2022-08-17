@@ -24,6 +24,9 @@ public class JanelaCadastro {
     private Label lbTelefone;
     private TextField tfTelefone;
 
+    private Label lbEmail;
+    private TextField tfEmail;
+
     private Button btCadastrar;
     private Button btVoltar;
 
@@ -41,6 +44,9 @@ public class JanelaCadastro {
         lbTelefone = new Label("Telefone:");
         tfTelefone = new TextField();
 
+        lbEmail = new Label("E-mail:");
+        tfEmail = new TextField();
+
         btCadastrar = new Button("Cadastrar");
         btCadastrar.setOnAction(this::cadastrar);
 
@@ -49,7 +55,7 @@ public class JanelaCadastro {
 
         HBox botoes = new HBox();
         botoes.getChildren().addAll(btVoltar,btCadastrar);
-
+        botoes.setSpacing(5.0);
 
         root = new VBox();
         root.setSpacing(5.0);
@@ -57,6 +63,7 @@ public class JanelaCadastro {
 
         root.getChildren().addAll(lbNome,tfNome);
         root.getChildren().addAll(lbTelefone,tfTelefone);
+        root.getChildren().addAll(lbEmail,tfEmail);
         root.getChildren().add(botoes);
 
     }
@@ -70,9 +77,10 @@ public class JanelaCadastro {
     private void cadastrar(ActionEvent evento){
         String nome = tfNome.getText();
         String telefone = tfTelefone.getText();
+        String email  = tfEmail.getText();
 
-        String msg = "Cadstro realizado!";
-        if(!listaTelefonica.adicionarContato(nome, telefone, "")){
+        String msg = "Cadastro realizado!";
+        if(!listaTelefonica.adicionarContato(nome, telefone, email)){
             msg = "Cadastro não realizado!";
         }else{
             limpar();
@@ -87,6 +95,7 @@ public class JanelaCadastro {
     private void limpar(){
         tfNome.clear();
         tfTelefone.clear();
+        tfEmail.clear();
     }
 
     private void voltar(ActionEvent evento){
