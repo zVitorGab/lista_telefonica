@@ -21,67 +21,27 @@ public class JanelaCadastro {
     /*Componente para mostrar um rótulo na tela. Geralmente
      * é utilizado para identificar outro componente.
      */
-    private Label lbNome;
+
 
     /*Componente para mostrar um campo de texto na tela. Permite
      * ao usuário digitar dados no teclado.
      */
+
+    @FXML    
     private TextField tfNome;
-
-    private Label lbTelefone;
+    @FXML
     private TextField tfTelefone;
-
-    private Label lbEmail;
+    @FXML
     private TextField tfEmail;
-
-    private Button btCadastrar;
-    private Button btVoltar;
 
     private ListaTelefonica listaTelefonica;
 
     public JanelaCadastro(ListaTelefonica listaTelefonica){
-        this.listaTelefonica = listaTelefonica;
-        inicializaComponentes();
-    }
-
-    private void inicializaComponentes(){
-        lbNome = new Label("Nome:");
-        tfNome = new TextField();
-
-        lbTelefone = new Label("Telefone:");
-        tfTelefone = new TextField();
-
-        lbEmail = new Label("E-mail:");
-        tfEmail = new TextField();
-
-        btCadastrar = new Button("Cadastrar");
-        btCadastrar.setOnAction(this::cadastrar);
-
-        btVoltar = new Button("Voltar");
-        btVoltar.setOnAction(this::voltar);
-
-        HBox botoes = new HBox();
-        botoes.getChildren().addAll(btVoltar,btCadastrar);
-        botoes.setSpacing(5.0);
-
-        root = new VBox();
-        root.setSpacing(5.0);
-        root.setPadding(new Insets(20));
-
-        root.getChildren().addAll(lbNome,tfNome);
-        root.getChildren().addAll(lbTelefone,tfTelefone);
-        root.getChildren().addAll(lbEmail,tfEmail);
-        root.getChildren().add(botoes);
-
+        this.listaTelefonica = listaTelefonica;   
     }
     
-
-    public Parent getRoot(){
-        return root;
-    }
-
-
     /*Método que será executado quando clicar no botão de cadastrar. */
+    @FXML
     private void cadastrar(ActionEvent evento){
 
         /*Pega o texto digitado pelo usuário e armazena em uma variável. */
@@ -108,6 +68,7 @@ public class JanelaCadastro {
         tfEmail.clear();
     }
 
+    @FXML
     private void voltar(ActionEvent evento){
         App.popScreen();
     }
